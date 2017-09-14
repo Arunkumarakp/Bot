@@ -1,0 +1,15 @@
+
+import pyttsx
+
+
+def text_to_speech(data):
+	engine = pyttsx.init()
+	engine.setProperty('rate', 180)
+	voices = engine.getProperty('voices')
+	engine.setProperty('voice',voices[1].id)
+	engine.say(data)
+	engine.runAndWait()
+	for voice in voices:
+   		print voice.gender 
+		
+	print voice.__dict__
